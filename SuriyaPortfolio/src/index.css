@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Love";
+  src: url("./assets/Fonts/Love Malia.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Glonto";
+  src: url("./assets/Fonts/Glonto-Regular.otf") format('opentype');
+}
+
+@font-face {
+  font-family: "Anokha";
+  src: url("./assets/Fonts/Glonto-Regular.otf") format('opentype');
+}
+@font-face {
+  font-family: "Poppis";
+  src: url("./assets/Fonts/PoppisDemo-j9MW0.otf") format('opentype');
+}
+
+.perspective-midrange {
+  perspective: 1000px;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+}
