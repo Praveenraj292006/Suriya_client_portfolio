@@ -32,9 +32,10 @@ const ViewProjects = (props) => {
         ref={cardRef}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
-        className={`w-[10vw] h-[30vh] p-1 rounded-4xl m-5 bg-${props.color}-800 cursor-pointer`}
+        style={{ backgroundColor: props.color }}
+        className={`lg:w-[10vw] lg:h-[30vh] p-5 rounded-4xl m-5 w-auto h-auto  cursor-pointer`}
       >
-        <h2 className="mt-6 p-3 text-[1.3rem] text-white">
+        <h2 className="mt-6 p-3 flex items-center justify-center text-[1.3rem]  text-white">
           {props.text}
         </h2>
       </div>

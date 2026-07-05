@@ -85,7 +85,7 @@ const Hero = () => {
           {/* Main Image */}
           <div className="relative z-10 flex justify-center w-full">
             <img
-              className="img  w-[60vw] lg:w-[40.3vw] relative lg:ml-8"
+              className="img  w-[60vw] lg:w-[35.3vw] relative lg:ml-8 lg:mt-[28vh]"
               src={suriya}
               alt="Dietician"
             />

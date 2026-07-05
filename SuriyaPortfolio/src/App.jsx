@@ -7,7 +7,7 @@ import Skills from './Sections/Skills/Skills.jsx'
 
 const App = () => {
   return (< >
-  <div className='selection:bg-black selection:text-white bg-gray-50'>
+  <div className='selection:bg-black selection:text-white bg-gray-200'>
     <Navbar/>
     <Hero/>
     <About/>
