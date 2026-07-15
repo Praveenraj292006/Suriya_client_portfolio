@@ -2,7 +2,7 @@ import React from 'react'
 import CVbutton from '../../Components/CVbutton/CVbutton'
 import dietician from '../../assets/Suriya_photo.png'
 import apple from '../../assets/Green-Apple-PNG-File.png'
-import suriya from '../../assets/Suriya_hero_img.png'
+import suriya from '../../assets/Suriya_hero_img_2.png'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -85,18 +85,14 @@ const Hero = () => {
           {/* Main Image */}
           <div className="relative z-10 flex justify-center w-full">
             <img
-              className="img  w-[60vw] lg:w-[35.3vw] relative lg:ml-8 lg:mt-[28vh]"
+              className="img  w-[80vw] lg:w-[70.3vw] relative lg:ml-8 lg:mt-[2vh]"
               src={suriya}
               alt="Dietician"
             />
           </div>
 
           {/* Apple */}
-          <img
-            className="w-16 sm:w-20 lg:w-[8vw] absolute right-4 sm:right-8 lg:right-10 bottom-4 sm:bottom-5 z-20"
-            src={apple}
-            alt="Apple"
-          />
+        
         </div>
       </div>
     </div>

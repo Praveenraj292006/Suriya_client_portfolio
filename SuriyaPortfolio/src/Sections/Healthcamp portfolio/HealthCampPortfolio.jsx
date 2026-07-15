@@ -76,7 +76,7 @@ export default function HealthCampPortfolio() {
   return (
     <section
       ref={container}
-      className="camp-section py-28 bg-white"
+      className="camp-section py-28 bg-[#F8FFFC]"
       id="portfolio"
     >
       <div className="max-w-7xl mx-auto px-6">

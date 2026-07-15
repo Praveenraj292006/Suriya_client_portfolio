@@ -1,90 +1,94 @@
-import { useRef } from "react";
-import gsap from "gsap";
+import { CircleCheck } from "lucide-react";
 
 export default function ExperienceCard({
-  left,
-  year,
-  title,
-  company,
-  duration,
-  description,
-}) {
-  const card = useRef();
+    year,
+    title,
+    company,
+    duration,
+    highlights,
+}) 
 
-  const enter = () => {
-    gsap.to(card.current, {
-      y: -10,
-      scale: 1.02,
-      duration: 0.35,
-      ease: "power3.out",
-    });
-  };
+{
+    
+    return (
+        <div
+            className="
+            experience-card
+            group
+            bg-white
+            rounded-[32px]
+            p-8
+            border
+            border-slate-200
+            transition-all
+            duration-500
+            hover:-translate-y-2
+            hover:shadow-2xl
+            "
+        >
+            <span
+                className="
+                inline-block
+                px-4
+                py-2
+                rounded-full
+                bg-emerald-100
+                text-emerald-700
+                text-sm
+                font-medium
+                "
+            >
+                {year}
+            </span>
 
-  const leave = () => {
-    gsap.to(card.current, {
-      y: 0,
-      scale: 1,
-      duration: 0.35,
-      ease: "power3.out",
-    });
-  };
+            <h3 className="text-2xl font-semibold mt-6">
+                {title}
+            </h3>
 
-  return (
-    <div
-      className={`timeline-card relative flex mb-24 items-center
-      ${left ? "lg:justify-start" : "lg:justify-end"}
-      justify-start`}
-    >
-      <div
-        ref={card}
-        onMouseEnter={enter}
-        onMouseLeave={leave}
-        className={`w-full lg:w-[44%]
-        rounded-3xl
-        border
-        border-gray-200
-        bg-white
-        p-7
-        shadow-sm
-        cursor-pointer
-        ${
-          left
-            ? "lg:mr-14"
-            : "lg:ml-14"
-        }`}
-      >
-        <p className="text-emerald-500 font-semibold">
-          {year}
-        </p>
+            <p className="text-slate-500 mt-1">
+                {company}
+            </p>
 
-        <h3 className="text-2xl font-[Anokha]  mt-2">
-          {title}
-        </h3>
+            <div className="space-y-4 mt-8">
 
-        <p className="text-gray-500 mt-1">
-          {company}
-        </p>
+                {highlights.map((item) => (
+                    <div
+                        key={item}
+                        className="flex items-center gap-3"
+                    >
+                        <CircleCheck
+                            size={18}
+                            className="text-emerald-500"
+                        />
 
-        <p className="text-sm text-emerald-600 mt-2">
-          {duration}
-        </p>
+                        <span>{item}</span>
 
-        <p className="text-gray-600 leading-7 mt-5">
-          {description}
-        </p>
-      </div>
+                    </div>
+                ))}
 
-      <div
-        className="timeline-dot hidden lg:flex absolute left-1/2
-        -translate-x-1/2
-        h-5
-        w-5
-        rounded-full
-        bg-emerald-500
-        border-4
-        border-white
-        shadow-lg"
-      />
-    </div>
-  );
+            </div>
+
+            <div
+                className="
+                mt-10
+                pt-6
+                border-t
+                border-slate-200
+                flex
+                justify-between
+                items-center
+                "
+            >
+                <span className="text-sm text-slate-500">
+                    Duration
+                </span>
+
+                <span className="font-medium">
+                    {duration}
+                </span>
+
+            </div>
+
+        </div>
+    );
 }

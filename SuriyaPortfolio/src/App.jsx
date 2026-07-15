@@ -7,6 +7,7 @@ import Experience from './Components/Experience/Experience.jsx'
 import HealthCampPortfolio from './Sections/Healthcamp portfolio/HealthCampPortfolio.jsx'
 import Contact from './Sections/Contact/Contact.jsx'
 import Footer from './Sections/Footer/Footer.jsx'
+import Gallery from './Sections/Gallery/Gallery.jsx'
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
     <Skills/>
     <Experience/>
     <HealthCampPortfolio/>
+    <Gallery></Gallery>
     <Contact/>
     <Footer></Footer>
   

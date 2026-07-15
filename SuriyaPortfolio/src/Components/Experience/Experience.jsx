@@ -13,115 +13,119 @@ const experience = [
     title: "Dietitian Consultant",
     company: "Anderson Diagnostics",
     duration: "1 Year 4 Months",
-    description:
-      "Conducted 100+ health screening camps, developed corporate wellness programs and provided evidence-based nutrition counselling.",
+    highlights: [
+      "100+ Health Camps",
+      "Corporate Wellness",
+      "Nutrition Counselling",
+    ],
   },
   {
     year: "2023 - 2024",
     title: "Health Coach",
     company: "WOOTU Nutrition",
     duration: "1 Year 2 Months",
-    description:
-      "Designed personalized diet plans, weight management strategies and macro-based meal plans.",
+    highlights: [
+      "Personalized Diet Plans",
+      "Weight Management",
+      "Macro Planning",
+    ],
   },
   {
     year: "2023",
     title: "Dietitian",
     company: "Noble Hospital",
     duration: "8 Months",
-    description:
-      "Performed nutritional assessments for ICU and ward patients while coordinating therapeutic diets.",
+    highlights: [
+      "ICU Nutrition",
+      "Patient Assessment",
+      "Doctor Collaboration",
+    ],
   },
   {
     year: "2021 - 2023",
     title: "Diet Coordinator",
     company: "Kauvery Hospital",
     duration: "2.5 Years",
-    description:
-      "Managed hospital diet services and collaborated with doctors and kitchen teams.",
+    highlights: [
+      "Therapeutic Diets",
+      "Kitchen Coordination",
+      "Patient Care",
+    ],
   },
 ];
 
 export default function Experience() {
   const container = useRef();
 
-  useGSAP(
-    () => {
-      gsap.from(".experience-title", {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-      });
+//  useGSAP(() => {
 
-      gsap.from(".timeline-line", {
-        scaleY: 0,
-        transformOrigin: "top",
-        duration: 1.3,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".timeline-wrapper",
-          start: "top 70%",
-        },
-      });
+//     const q = gsap.utils.selector(container);
 
-      gsap.from(".timeline-card", {
-        opacity: 0,
-        y: 80,
-        stagger: 0.2,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".timeline-wrapper",
-          start: "top 70%",
-        },
-      });
+//     gsap.from(q(".experience-heading"),{
+//         opacity:0,
+//         y:50,
+//         duration:.8,
+//         scrollTrigger:{
+//             trigger:container.current,
+//             start:"top 75%"
+//         }
+//     });
 
-      gsap.from(".timeline-dot", {
-        scale: 0,
-        stagger: 0.2,
-        duration: 0.4,
-        ease: "back.out(2)",
-        scrollTrigger: {
-          trigger: ".timeline-wrapper",
-          start: "top 70%",
-        },
-      });
-    },
-    { scope: container }
-  );
+//     gsap.from(q(".experience-card"),{
+//         opacity:0,
+//         y:60,
+//         scale:.95,
+//         stagger:.15,
+//         duration:.8,
+//         ease:"power3.out",
+//         scrollTrigger:{
+//             trigger:q(".experience-grid")[0],
+//             start:"top 75%"
+//         }
+//     });
+
+// },{scope:container});
 
   return (
-    <section
-      ref={container}
-      id="experience"
-      className="bg-gray-200 py-28"
-    >
-      <div className="max-w-6xl mx-auto px-6">
+   <section
+    id="experience"
+    ref={container}
+    className="py-24 bg-[#f8fafc]"
+>
+    <div className="max-w-7xl mx-auto px-6">
 
-        <div className="experience-title  mb-20">
-          <p className="text-emerald-500 font-[Poppis] font-medium">
-            Career Journey
-          </p>
+        <div className="experience-heading max-w-3xl">
 
-          <h2 className="text-[5vw] mx-6 font-[Glonto] font-semibold mt-2 ">
-            Professional Experience
-          </h2>
-        </div>
+            <p className="uppercase tracking-[0.2em] text-emerald-500 font-semibold">
+                Career Journey
+            </p>
 
-        <div className="timeline-wrapper relative">
+            <h2 className="text-5xl font-[Glonto] mt-4">
+                Professional Experience
+            </h2>
 
-          <div className="timeline-line hidden lg:block absolute left-1/2 top-0 w-0.75 h-full bg-emerald-400 -translate-x-1/2" />
-
-          {experience.map((item, index) => (
-            <ExperienceCard
-              key={index}
-              {...item}
-              left={index % 2 === 0}
-            />
-          ))}
+            <p className="mt-6 text-slate-500 leading-8">
+                Over five years of experience across hospitals,
+                diagnostics and corporate wellness, delivering
+                patient-centered nutrition care.
+            </p>
 
         </div>
-      </div>
-    </section>
+
+        <div className="experience-grid grid lg:grid-cols-2 gap-8 mt-16">
+
+            {experience.map((job, index) => (
+
+                <ExperienceCard
+                    key={index}
+                    {...job}
+                />
+
+            ))}
+
+        </div>
+
+    </div>
+</section>
   );
 }
